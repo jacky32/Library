@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav>
+    <h1>
+      The Library
+    </h1>
+  </nav>
+  <div class="main">
+
+    <div class="main-upper">
+      <p>This is ...</p>
+      <button id="new-book-button">New book</button>
+
+      <div id="new-book-modal" class="hidden new-book-modal">
+        <div class="new-book-modal-content">
+          <button class="new-book-button-close"></button>
+          <form action="" id="new-book" class="new-book-form">
+            <label for="name">Book name:</label>
+            <input type="text" name="name" id="name">
+            <label for="author">Book author:</label>
+            <input type="text" name="author" id="author">
+            <label for="pages">Pages:</label>
+            <input type="number" name="pages" id="pages">
+            <label for="read">Read?</label>
+            <input type="checkbox" name="read" id="read">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="book">
+        <div class="book-name">Book name</div>
+        <div class="book-author">Book author</div>
+        <div class="book-pages">Pages: 256</div>
+
+        <button class="book-button-read">Read</button>
+        <button class="book-button-delete">X</button>
+      </div>
+      <div class="book">
+        <div class="book-name">Book name</div>
+        <div class="book-author">Book author</div>
+        <div class="book-pages">Pages: 256</div>
+
+        <button class="book-button-read">Read</button>
+        <button class="book-button-delete">X</button>
+      </div>
+      <div class="book">
+        <div class="book-name">Book name</div>
+        <div class="book-author">Book author</div>
+        <div class="book-pages">Pages: 256</div>
+
+        <button class="book-button-read">Read</button>
+        <button class="book-button-delete">X</button>
+      </div>
+      <div class="book">
+        <div class="book-name">Book name</div>
+        <div class="book-author">Book author</div>
+        <div class="book-pages">Pages: 256</div>
+
+        <button class="book-button-read">Read</button>
+        <button class="book-button-delete">X</button>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>

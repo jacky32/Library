@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+button {
+  background-color: rgb(156, 104, 80);
+  color:white;
+  font-weight: 500;
+}
+
+nav {
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+.main {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+}
+
+.main-upper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-book-button {
+  width: 120px;
+  height: 40px;
+}
+
+.new-book-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: rgba(169, 169, 169, 0.267);
+  width: 100%;
+  height: 100%;
+}
+
+.new-book-modal-content {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-book-button-close {
+  position:absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 24px;
+  height: 24px;
+}
+
+.new-book-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 16px
+}
+
+.book {
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 12px;
+  width: 240px;
+  height: 240px;
+  background-color: whitesmoke;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.book-author {
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 16px;
+}
+
+.book-pages {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.book-button-read {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+
+  width: 80px;
+  height: 32px;
+}
+
+.book-button-delete {
+  position:absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 24px;
+  height: 24px;
+}
+
+.hidden {
+  display: none;
+}
