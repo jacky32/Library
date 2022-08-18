@@ -93,7 +93,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-.main-content {
+#main-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -112,6 +112,10 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.read {
+  background-color: greenyellow;
 }
 
 .book-name {
