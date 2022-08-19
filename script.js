@@ -23,17 +23,20 @@ newBookForm.addEventListener('submit', (e) => {
 });
 
 let myLibrary = [];
+addBookToLibrary('HARRY POTTER', 'JFK', 256, true);
+displayBooks();
 
-function Book(name, author, pages, read) {
+function Book(name, author, pages, read, id) {
   this.name = name;
   this.author = author;
   this.pages = pages;
   this.read = read;
-
+  this.id = id;
 }
 
 function addBookToLibrary(name, author, pages, read) {
-  myLibrary.push(new Book(name, author, pages, read));
+  id = myLibrary.length + 1;
+  myLibrary.push(new Book(name, author, pages, read, id));
 }
 
 function resetNewBookForm() {
@@ -45,20 +48,38 @@ function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
     let book = myLibrary[i];
     if (book.read == true) {
-      mainContent.insertAdjacentHTML('afterbegin', `<div class='book read' id='${i}'><div class='book-name'>${book.name} </div><div class='book-author'>${book.author}</div><div class='book-pages'>${book.pages} pages</div><button class='book-button-read'>Read?</button><button class='book-button-delete'>X</button></></div>`);
+      mainContent.insertAdjacentHTML('afterbegin', `<div class='book read' id='${book.id}'><div class='book-name'>${book.name} </div><div class='book-author'>${book.author}</div><div class='book-pages'>${book.pages} pages</div><button class='book-button-read'>Read?</button><button class='book-button-delete'>X</button></></div>`);
     } else {
-      mainContent.insertAdjacentHTML('afterbegin', `<div class='book' id='${i}'><div class='book-name'>${book.name} </div><div class='book-author'>${book.author}</div><div class='book-pages'>${book.pages} pages</div><button class='book-button-read'>Read?</button><button class='book-button-delete'>X</button></></div>`);
+      mainContent.insertAdjacentHTML('afterbegin', `<div class='book' id='${book.id}'><div class='book-name'>${book.name} </div><div class='book-author'>${book.author}</div><div class='book-pages'>${book.pages} pages</div><button class='book-button-read'>Read?</button><button class='book-button-delete'>X</button></></div>`);
     }
   }
+  addDeleteButtons();
+  addReadButtons();
+}
 
-  const deleteButtons = document.getElementsByClassName('book-button-delete');
+function addReadButtons() {
+  const readButtons = document.getElementsByClassName('book-button-read');
+  for(let i = 0; i < readButtons.length; i++) {
+    readButtons[i].addEventListener('click', (e) => {
+      e.target.parentNode.classList.toggle('read');
+      if (myLibrary[i].read == true) {
+        myLibrary[i].read = false;
+      } else {
+        myLibrary[i].read = true;
+      }
+    });
+  }  
+}
+
+function addDeleteButtons() {
+  let deleteButtons = document.getElementsByClassName('book-button-delete');
   for(let i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].addEventListener('click', (e) => {
-      document.getElementById(i).remove();
-      myLibrary.splice(i, 1);
-      displayBooks();
+      book = e.target.parentNode;
+      myLibrary.splice(myLibrary.indexOf(book.id), 1);
+      book.remove();
     });
-  }
+  }  
 }
 
 function toggleNewBookForm() {
